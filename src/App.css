@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.App {
+  text-align: center;
+  background: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  position: relative;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #6200ea;
+}
+
+.button-container {
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 15px 30px;
+  font-size: 18px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  background-color: #6200ea;
+  color: #fff;
+}
+
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.result {
+  font-size: 22px;
+  margin-top: 20px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.result.win {
+  color: #4caf50;
+  animation: winAnimation 0.5s ease-in-out;
+}
+
+.result.lose {
+  color: #f44336;
+  animation: loseAnimation 0.5s ease-in-out;
+}
+
+@keyframes winAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes loseAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.scoreboard {
+  margin-top: 20px;
+  font-size: 1.2em;
+  background: #e0e0e0;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+p {
+  margin: 10px 0;
+}
+
+.theme-dark {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.theme-dark .App {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  border: 1px solid #333;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.theme-dark h1 {
+  color: #bb86fc;
+}
+
+.theme-dark button {
+  background-color: #bb86fc;
+  color: #1e1e1e;
+}
+
+.theme-dark button:hover {
+  background-color: #bb86fc;
+  color: #1e1e1e;
+  box-shadow: 0 4px 10px rgba(187, 134, 252, 0.5);
+}
+
+.theme-dark .scoreboard {
+  background: #333;
+  color: #e0e0e0;
+}
+
+.theme-dark .result.win {
+  color: #03dac6;
+}
+
+.theme-dark .result.lose {
+  color: #cf6679;
+}
+
+.theme-light {
+  background-color: #fff;
+  color: #000;
+}
+
+.theme-light .App {
+  background-color: #f0f0f0;
+  color: #000;
+}
+
+.theme-light button {
+  background-color: #6200ea;
+  color: #fff;
+}
+
+.theme-light button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.theme-light .result.win {
+  color: #4caf50;
+}
+
+.theme-light .result.lose {
+  color: #f44336;
+}
+
+.cursor {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #6200ea;
+  border-radius: 50%;
+  pointer-events: none;
+  transition: transform 0.1s ease-in-out;
+}
+
+.spider-web {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: rgba(98, 0, 234, 0.2);
+  border-radius: 50%;
+  pointer-events: none;
+  transition: transform 0.1s ease-in-out;
+}
+
+/* Instructions Button and Popup */
+.instructions-button {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #6200ea;
+  color: #fff;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.instructions-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.instructions-popup {
+  position: fixed;
+  bottom: 60px;
+  left: 20px;
+  width: 300px;
+  background-color: #fff;
+  color: #000;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.theme-dark .instructions-popup {
+  background-color: #333;
+  color: #e0e0e0;
+}
