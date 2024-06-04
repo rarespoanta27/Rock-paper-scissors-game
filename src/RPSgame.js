@@ -69,7 +69,7 @@ const RPSGame = () => {
     setShowConfetti(true);
     setTimeout(() => {
       setShowConfetti(false);
-    }, 3000); // Confetti will be shown for 3 seconds
+    }, 3000); 
   };
 
   const toggleTheme = () => {
